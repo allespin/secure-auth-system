@@ -10,6 +10,10 @@ A interface web conta com tema terminal, comunicação via API REST e sessão au
 
 ## 📸 Preview
 
+<img width="1706" height="816" alt="image" src="https://github.com/user-attachments/assets/73cc7998-1dad-47f7-bd98-895196c934ad" />
+
+
+
 ### 1. Tela de login
 Tela de login // usuário não encontrado.
 
