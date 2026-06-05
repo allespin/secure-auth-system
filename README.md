@@ -65,7 +65,7 @@ Tela de cadastro // usuário cadastrado com sucesso
 
 
 
-### 5. Mensagem de boas vindas ao usuário // autenticação da conta no sistema.
+### 5. Mensagem de boas vindas ao usuário e autenticação da conta no sistema.
 
 <div align="center">
   <table>
