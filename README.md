@@ -106,7 +106,6 @@ Após o usuário utilizar inserir três vezes uma senha errada sua conta sofre u
 ```
 login-register-system/
 ├── app.py                  # Backend Flask (rotas e API)
-├── sistema_login.py        # Versão CLI com Colorama
 ├── requirements.txt        # Dependências
 ├── usuarios.json           # Banco de dados local (gerado automaticamente)
 └── templates/
@@ -219,7 +218,6 @@ The web interface features a terminal-style theme, REST API communication, and a
 ```
 login-register-system/
 ├── app.py                  # Flask backend (routes and API)
-├── sistema_login.py        # CLI version with Colorama
 ├── requirements.txt        # Dependencies
 ├── usuarios.json           # Local database (auto-generated)
 └── templates/
