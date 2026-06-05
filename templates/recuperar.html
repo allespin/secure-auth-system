@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Recuperar Senha{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="logo">// ACESSO NEGADO?</div>
+  <h1>RECUPERAR</h1>
+  <div class="subtitle">REDEFINIÇÃO DE SENHA</div>
+
+  <div class="alert" id="alerta"></div>
+
+  <!-- Passo 1: solicitar token -->
+  <div class="step active" id="passo1">
+    <div class="field">
+      <label>USUÁRIO</label>
+      <input type="text" id="nome" placeholder="seu_usuario" autocomplete="off"/>
+    </div>
+    <button class="btn" onclick="solicitarToken()">► ENVIAR TOKEN</button>
+  </div>
+
+  <!-- Passo 2: inserir token e nova senha -->
+  <div class="step" id="passo2">
+    <div class="token-box show" id="tokenSimulado"></div>
+
+    <div class="field">
+      <label>TOKEN RECEBIDO</label>
+      <input type="text" id="token" placeholder="EX: A1B2C3D4" autocomplete="off" style="letter-spacing:0.2em"/>
+    </div>
+    <div class="field">
+      <label>NOVA SENHA</label>
+      <input type="password" id="nova_senha" placeholder="••••••••"/>
+    </div>
+    <div class="field">
+      <label>CONFIRMAR NOVA SENHA</label>
+      <input type="password" id="confirmacao" placeholder="••••••••"/>
+    </div>
+    <button class="btn" onclick="confirmarToken()">► REDEFINIR SENHA</button>
+  </div>
+
+  <div class="links">
+    <a href="/login">[ VOLTAR AO LOGIN ]</a>
+  </div>
+</div>
+
+<script>
+  let nomeGlobal = "";
+
+  function mostrarAlerta(msg, tipo) {
+    const el = document.getElementById("alerta");
+    el.textContent = msg;
+    el.className = `alert show alert-${tipo}`;
+  }
+
+  async function solicitarToken() {
+    const nome = document.getElementById("nome").value;
+    nomeGlobal = nome;
+
+    const res = await fetch("/api/recuperar/solicitar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nome })
+    });
+    const data = await res.json();
+
+    if (data.ok) {
+      mostrarAlerta("✔ " + data.msg, "ok");
+      document.getElementById("tokenSimulado").textContent = "TOKEN: " + data.token_simulado;
+      document.getElementById("passo1").classList.remove("active");
+      document.getElementById("passo2").classList.add("active");
+    } else {
+      mostrarAlerta("✕ " + data.msg, "err");
+    }
+  }
+
+  async function confirmarToken() {
+    const token       = document.getElementById("token").value;
+    const nova_senha  = document.getElementById("nova_senha").value;
+    const confirmacao = document.getElementById("confirmacao").value;
+
+    const res = await fetch("/api/recuperar/confirmar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nome: nomeGlobal, token, nova_senha, confirmacao })
+    });
+    const data = await res.json();
+
+    if (data.ok) {
+      mostrarAlerta("✔ " + data.msg, "ok");
+      setTimeout(() => window.location.href = "/login", 1200);
+    } else {
+      mostrarAlerta("✘ " + data.msg, "err");
+    }
+  }
+</script>
+{% endblock %}

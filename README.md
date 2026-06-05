@@ -1,0 +1,257 @@
+# 🔐 Sistema de Login e Registro de Usuários 
+
+Sistema de autenticação completo desenvolvido em Python, disponível em versão web app via Flask.
+Permite cadastro de usuários, login seguro e recuperação de senha por token de 8 caracteres.
+As senhas são armazenadas com hash SHA-256 e possui proteção contra força bruta com bloqueio após 3 tentativas.
+A interface web conta com tema terminal, comunicação via API REST e sessão autenticada.
+
+---
+
+## ✨ Funcionalidades
+
+### 🖥️ CLI (Terminal)
+- Cadastro de usuários com nome, e-mail e senha
+- Login com autenticação segura
+- Senhas armazenadas com hash **SHA-256**
+- Interface CLI colorida com **Colorama**
+- Ícones e separadores visuais para melhor legibilidade
+
+### 🌐 Web Interface (Flask)
+- Páginas de login, cadastro, recuperação de senha e dashboard
+- Tema **terminal** utilizando fontes Rajdhani e Mono, fundo escuro e efeito scanlines
+- Comunicação via API REST em JSON
+- Sessão de usuário com `flask.session`
+- Design responsivo e funcional
+
+### 🛡️ Segurança
+- **Hash SHA-256** em todas as senhas e tokens
+- **Limite de tentativas de login** — conta bloqueada após 3 erros consecutivos
+- **Bloqueio temporário** de 30 segundos após exceder o limite
+- **Recuperação de senha por token** — gerado aleatoriamente e validado via hash
+- Token invalidado após o uso
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+login-register-system/
+├── app.py                  # Backend Flask (rotas e API)
+├── sistema_login.py        # Versão CLI com Colorama
+├── requirements.txt        # Dependências
+├── usuarios.json           # Banco de dados local (gerado automaticamente)
+└── templates/
+    ├── base.html           # Layout base com tema terminal
+    ├── login.html
+    ├── cadastro.html
+    ├── recuperar.html
+    └── dashboard.html
+```
+
+---
+
+## 🚀 Como rodar
+
+### Pré-requisitos
+- Python 3.8+
+- pip
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/login-register-system.git
+cd login-register-system
+
+# Instale as dependências
+pip install -r requirements.txt
+```
+
+### Rodar a versão CLI
+
+```bash
+python sistema_login.py
+```
+
+### Rodar a versão Web
+
+```bash
+python app.py
+```
+
+Acesse em: [http://localhost:5000](http://localhost:5000)
+
+---
+
+## 🧪 Como usar
+
+### Cadastro
+1. Escolha a opção **Cadastrar**
+2. Informe nome de usuário, senha e e-mail
+3. Confirme a senha
+
+### Login
+1. Informe nome de usuário e senha
+2. Após **3 tentativas erradas**, a conta é bloqueada por **30 segundos**
+
+### Recuperação de senha
+1. Informe o nome de usuário
+2. Um token de 8 caracteres é gerado e "enviado" ao e-mail cadastrado
+3. Insira o token para validar e redefinir a senha
+
+> ⚠️ Em produção, substitua o token simulado pelo envio real via SMTP ou serviço de e-mail (SendGrid, etc.)
+
+---
+
+## 🛠️ Tecnologias
+
+| Tecnologia | Uso |
+|---|---|
+| Python 3 | Linguagem principal |
+| Flask | Web framework |
+| Colorama | Cores no terminal |
+| SHA-256 (hashlib) | Hash de senhas e tokens |
+| JSON | Armazenamento de usuários |
+| Jinja2 | Templates HTML |
+| HTML/CSS/JS | Frontend da web interface |
+
+---
+
+## 📌 Observações
+
+- O arquivo `usuarios.json` é criado automaticamente na primeira execução
+- A `secret_key` do Flask deve ser trocada por uma chave segura em produção
+- O sistema não usa banco de dados externo
+
+---
+
+
+---
+
+# 🔐 Login & User Register System — (English)
+
+A complete authentication system built in Python, available a web app via Flask.
+Supports user registration, secure login, and password recovery through an 8-character token.
+Passwords are stored with SHA-256 hashing and brute-force protection locks the account after 3 failed attempts.
+The web interface features a terminal-style theme, REST API communication, and authenticated sessions.
+
+---
+
+## ✨ Features
+
+### 🖥️ CLI (Terminal)
+- User registration with username, email and password
+- Login with secure authentication
+- Passwords stored as **SHA-256** hashes
+- Colorful interface with **Colorama**
+- Icons and visual separators for better readability
+
+### 🌐 Web Interface (Flask)
+- Login, register, password recovery and dashboard pages
+- **Terminal** theme with Rajdhani e Mono font, dark background and scanline effect
+- REST API communication in JSON
+- User session with `flask.session`
+- Responsive and fully functional design
+
+### 🛡️ Security
+- **SHA-256 hashing** on all passwords and tokens
+- **Login attempt limit** — account locked after 3 consecutive failures
+- **Temporary lockout** of 30 seconds after exceeding the limit
+- **Token-based password recovery** — randomly generated and validated via hash
+- Token invalidated after use
+
+---
+
+## 📁 Project Structure
+
+```
+login-register-system/
+├── app.py                  # Flask backend (routes and API)
+├── sistema_login.py        # CLI version with Colorama
+├── requirements.txt        # Dependencies
+├── usuarios.json           # Local database (auto-generated)
+└── templates/
+    ├── base.html           # Base layout with terminal theme
+    ├── login.html
+    ├── cadastro.html
+    ├── recuperar.html
+    └── dashboard.html
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Python 3.8+
+- pip
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/login-register-system.git
+cd login-register-system
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Run the CLI version
+
+```bash
+python sistema_login.py
+```
+
+### Run the Web version
+
+```bash
+python app.py
+```
+
+Access at: [http://localhost:5000](http://localhost:5000)
+
+---
+
+## 🧪 How to Use
+
+### Register
+1. Choose the **Register** option
+2. Enter username, password and email
+3. Confirm your password
+
+### Login
+1. Enter your username and password
+2. After **3 wrong attempts**, the account is locked for **30 seconds**
+
+### Password Recovery
+1. Enter your username
+2. An 8-character token is generated and "sent" to the registered email
+3. Enter the token to validate and reset your password
+
+> ⚠️ In production, replace the simulated token with real email delivery via SMTP or an email service (SendGrid, etc.)
+
+---
+
+## 🛠️ Technologies
+
+| Technology | Usage |
+|---|---|
+| Python 3 | Main language |
+| Flask | Web framework |
+| Colorama | Terminal colors |
+| SHA-256 (hashlib) | Password and token hashing |
+| JSON | User storage |
+| Jinja2 | HTML templates |
+| HTML/CSS/JS | Web interface frontend |
+
+---
+
+## 📌 Notes
+
+- The `usuarios.json` file is created automatically on first run
+- The Flask `secret_key` should be replaced with a secure key in production
+- The system uses no external database — ideal for learning and small projects
+
+---
+

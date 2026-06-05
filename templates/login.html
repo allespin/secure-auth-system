@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="logo">// SISTEMA DE ACESSO</div>
+  <h1>LOGIN</h1>
+  <div class="subtitle">AUTENTICAÇÃO DE USUÁRIO</div>
+
+  <div class="alert" id="alerta"></div>
+
+  <div class="field">
+    <label>USUÁRIO</label>
+    <input type="text" id="nome" placeholder="seu_usuario" autocomplete="off"/>
+  </div>
+  <div class="field">
+    <label>SENHA</label>
+    <input type="password" id="senha" placeholder="••••••••"/>
+  </div>
+
+  <button class="btn" onclick="fazerLogin()">► ENTRAR</button>
+
+  <div class="links">
+    <a href="/cadastro">[ CRIAR CONTA ]</a>
+    <a href="/recuperar">[ ESQUECI MINHA SENHA ]</a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("keydown", e => { if (e.key === "Enter") fazerLogin(); });
+
+  function mostrarAlerta(msg, tipo) {
+    const el = document.getElementById("alerta");
+    el.textContent = msg;
+    el.className = `alert show alert-${tipo}`;
+  }
+
+  async function fazerLogin() {
+    const nome = document.getElementById("nome").value;
+    const senha = document.getElementById("senha").value;
+
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nome, senha })
+    });
+    const data = await res.json();
+
+    if (data.ok) {
+      mostrarAlerta("✔ " + data.msg, "ok");
+      setTimeout(() => window.location.href = "/dashboard", 800);
+    } else {
+      mostrarAlerta("✕ " + data.msg, "err");
+    }
+  }
+</script>
+{% endblock %}

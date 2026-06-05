@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="dash-header">// SESSÃO ATIVA</div>
+
+  <div class="dash-name">{{ usuario }}</div>
+
+  <div class="dash-status">
+    <div class="dot"></div>
+    AUTENTICADO COM SUCESSO
+  </div>
+
+  <div class="dash-grid">
+    <div class="dash-tile">
+      <div class="label">STATUS</div>
+      <div class="value" style="color: var(--green)">ONLINE</div>
+    </div>
+    <div class="dash-tile">
+      <div class="label">ACESSO</div>
+      <div class="value">USUÁRIO</div>
+    </div>
+    <div class="dash-tile">
+      <div class="label">TENTATIVAS FALHAS</div>
+      <div class="value" style="color: var(--yellow)">0</div>
+    </div>
+    <div class="dash-tile">
+      <div class="label">BLOQUEIO</div>
+      <div class="value" style="color: var(--green)">NENHUM</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <a href="/logout" class="btn btn-ghost" style="display:block; text-align:center; text-decoration:none; padding:0.75rem; font-family:var(--mono); font-size:0.85rem; letter-spacing:0.15em;">
+    ► ENCERRAR SESSÃO
+  </a>
+</div>
+{% endblock %}
