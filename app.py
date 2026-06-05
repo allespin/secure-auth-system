@@ -7,7 +7,7 @@ import string
 import time
 
 app = Flask(__name__)
-app.secret_key = "chave_secreta_super_segura_troque_em_producao"
+app.secret_key = "chave_secreta_de_sistema"
 
 ARQUIVO_USUARIOS = "usuarios.json"
 MAX_TENTATIVAS = 3
