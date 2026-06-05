@@ -1,3 +1,5 @@
+#### [PRTUGUESE/ ENGLISH]
+
 # 🔐 Sistema de Login e Registro de Usuários 
 
 Sistema de autenticação completo desenvolvido em Python, disponível em versão web app via Flask.
