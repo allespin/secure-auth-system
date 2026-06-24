@@ -128,7 +128,7 @@ login-register-system/
 
 ```bash
 # Clone o repositório
-git clone https://github.com/allespin/login-register-system-python-and-flask
+git clone https://github.com/allespin/login-register-auth-system-python-and-flask
 cd login-register-system-python-and-flask
 
 # Instale as dependências
