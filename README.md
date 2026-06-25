@@ -2,7 +2,7 @@
 
 # 🔐 Sistema de login, cadastro e autenticação de usuários 
 
-Sistema de autenticação desenvolvido em Python com Flask, disponibilizado como aplicação web. O sistema oferece cadastro de usuários, login seguro, recuperação de senha por meio de token de 8 caracteres e gerenciamento de sessões autenticadas.
+Sistema de autenticação web desenvolvido em Python com Flask, com cadastro de usuários, login seguro, recuperação de senha via token de 8 caracteres e gerenciamento de sessões autenticadas.
 
 Entre os recursos implementados estão proteção contra tentativas de força bruta com bloqueio após múltiplas falhas de autenticação, armazenamento seguro de credenciais utilizando bcrypt com salt automático e comunicação entre cliente e servidor por meio de API REST.
 
@@ -195,7 +195,7 @@ Acesse em: [http://localhost:5000](http://localhost:5000)
 
 # 🔐 Login & user register system — English
 
-Authentication system developed with Python and Flask as a web application. The application provides user registration, secure login, password recovery through an 8-character token, and authenticated session management.
+Web authentication system developed in Python with Flask, featuring user registration, secure login, password recovery via an 8-character token, and authenticated session management.
 
 The project implements common web security practices, including brute-force protection, temporary account lockout after multiple failed login attempts, and secure credential storage using bcrypt with automatic salting. Communication between the frontend and backend is handled through a REST API.
 
