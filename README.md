@@ -2,10 +2,12 @@
 
 # 🔐 Sistema de login, cadastro e autenticação de usuários 
 
-Sistema de autenticação completo desenvolvido em Python, disponibilizado em versão web app via Flask.
-Permite cadastro de usuários, login e recuperação de senha por token de 8 caracteres.
-As senhas são armazenadas com hash SHA-256 e possui proteção contra força bruta com bloqueio após 3 tentativas.
-A interface web conta com tema terminal, comunicação via API REST e sessão autenticada.
+Sistema de autenticação desenvolvido em Python com Flask, disponibilizado como aplicação web. O sistema oferece cadastro de usuários, login seguro, recuperação de senha por meio de token de 8 caracteres e gerenciamento de sessões autenticadas.
+
+Entre os recursos implementados estão proteção contra tentativas de força bruta com bloqueio após múltiplas falhas de autenticação, armazenamento seguro de credenciais e comunicação entre cliente e servidor por meio de API REST.
+
+A interface adota uma estética inspirada em terminais de comando, proporcionando uma experiência visual diferenciada sem comprometer a usabilidade.
+
 
 
 ## 📸 Preview
