@@ -86,20 +86,21 @@ Após o usuário inserir três vezes uma senha errada sua conta sofre um bloquei
 
 ## ✨ Funcionalidades
 
-
 ### 🌐 Web Interface (Flask)
-- Páginas de login, cadastro, recuperação de senha e dashboard
-- Tema **terminal** utilizando fontes Rajdhani e Mono, fundo escuro e efeito scanlines
-- Comunicação via API REST em JSON
-- Sessão de usuário com `flask.session`
-- Design responsivo e funcional
+
+* Páginas de login, cadastro, recuperação de senha e dashboard
+* Tema terminal com fontes Rajdhani e Roboto Mono, fundo escuro e efeito scanlines
+* Comunicação via API REST utilizando JSON
+* Gerenciamento de sessão com `flask.session`
+* Interface responsiva para desktop e dispositivos móveis
 
 ### 🛡️ Segurança
-- **Hash SHA-256** em todas as senhas e tokens
-- **Limite de tentativas de login** — conta bloqueada após 3 erros consecutivos
-- **Bloqueio temporário** de 30 segundos após exceder o limite
-- **Recuperação de senha por token** — gerado aleatoriamente e validado via hash
-- Token invalidado após o uso
+
+* Aplicação de hash SHA-256 para armazenamento de senhas e tokens
+* Limite de tentativas de login com bloqueio após 3 erros consecutivos
+* Bloqueio temporário de 30 segundos após exceder o limite de tentativas
+* Recuperação de senha por token gerado aleatoriamente e validado via hash
+* Invalidação automática do token após a redefinição da senha
 
 ---
 
