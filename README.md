@@ -104,7 +104,7 @@ Após o usuário inserir três vezes uma senha errada sua conta sofre um bloquei
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura do projeto
 
 ```
 login-register-system/
