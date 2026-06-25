@@ -4,7 +4,7 @@
 
 Sistema de autenticação desenvolvido em Python com Flask, disponibilizado como aplicação web. O sistema oferece cadastro de usuários, login seguro, recuperação de senha por meio de token de 8 caracteres e gerenciamento de sessões autenticadas.
 
-Entre os recursos implementados estão proteção contra tentativas de força bruta com bloqueio após múltiplas falhas de autenticação, armazenamento seguro de credenciais e comunicação entre cliente e servidor por meio de API REST.
+Entre os recursos implementados estão proteção contra tentativas de força bruta com bloqueio após múltiplas falhas de autenticação, armazenamento seguro de credenciais utilizando bcrypt com salt automático e comunicação entre cliente e servidor por meio de API REST.
 
 A interface adota uma estética inspirada em terminais de comando, proporcionando uma experiência visual diferenciada sem comprometer a usabilidade.
 
@@ -170,14 +170,16 @@ Acesse em: [http://localhost:5000](http://localhost:5000)
 
 ## 🛠️ Tecnologias
 
-| Tecnologia | Uso |
-|---|---|
-| Python 3 | Linguagem principal |
-| Flask | Web framework |
-| SHA-256 (hashlib) | Hash de senhas e tokens |
-| JSON | Armazenamento de usuários |
-| Jinja2 | Templates HTML |
-| HTML/CSS/JS | Front-end da interface web |
+| Tecnologia          | Uso                                           |
+| ------------------- | --------------------------------------------- |
+| Python 3            | Linguagem principal                           |
+| Flask               | Framework web                                 |
+| bcrypt              | Proteção e hash de senhas com salt automático |
+| JSON                | Armazenamento de dados dos usuários           |
+| Jinja2              | Renderização de templates HTML                |
+| HTML/CSS/JavaScript | Desenvolvimento da interface web              |
+| API REST            | Comunicação entre frontend e backend          |
+
 
 ---
 
@@ -191,12 +193,13 @@ Acesse em: [http://localhost:5000](http://localhost:5000)
 
 # 🔐 Login & user register system — English
 
-A complete authentication system built in Python, available a web app via Flask.
-Supports user registration, secure login, and password recovery through an 8-character token.
-Passwords are stored with SHA-256 hashing and brute-force protection locks the account after 3 failed attempts.
-The web interface features a terminal-style theme, REST API communication, and authenticated sessions.
+Authentication system developed with Python and Flask as a web application. The application provides user registration, secure login, password recovery through an 8-character token, and authenticated session management.
 
----
+The project implements common web security practices, including brute-force protection, temporary account lockout after multiple failed login attempts, and secure credential storage using bcrypt with automatic salting. Communication between the frontend and backend is handled through a REST API.
+
+The interface was designed with a terminal-inspired aesthetic, combining a distinctive visual identity, responsiveness, and usability.
+
+📸 Preview
 
 ## ✨ Features
 
@@ -280,16 +283,19 @@ Access at: [http://localhost:5000](http://localhost:5000)
 
 ---
 
+
 ## 🛠️ Technologies
 
-| Technology | Usage |
-|---|---|
-| Python 3 | Main language |
-| Flask | Web framework |
-| SHA-256 (hashlib) | Password and token hashing |
-| JSON | User storage |
-| Jinja2 | HTML templates |
-| HTML/CSS/JS | Front-end web interface |
+| Technology          | Purpose                                        |
+| ------------------- | ---------------------------------------------- |
+| Python 3            | Main programming language                      |
+| Flask               | Web framework                                  |
+| bcrypt              | Secure password hashing with automatic salting |
+| JSON                | User data storage                              |
+| Jinja2              | HTML templating engine                         |
+| HTML/CSS/JavaScript | Front-end interface                            |
+| REST API            | Communication between frontend and backend     |
+
 
 ---
 
